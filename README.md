@@ -22,4 +22,22 @@ So if you want to become a proficient C++ developer, it’s up to you to go furt
 
 
 # CPP_00
-42 WOB CPP Module 00
+### Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff
+
+
+## Exercise 00:
+### Megaphone
+Make sure that everybody is awake
+
+## Exercise 01:
+### My Awesome PhoneBook
+Welcome to the 80s and their unbelievable technology! Write a program that behaves
+like a crappy awesome phonebook software.
+
+## Exercise 02:
+### The Job Of Your Dreams
+Your manager just gave you some work to do. Your first task is to recreate a
+lost file. Something went wrong and a source file was deleted by mistake. Unfortunately,
+your colleagues don’t know what Git is and use USB keys to share code. At this point, it
+would make sense to leave this place right now. However, you decide to stay. Challenge
+accepted!
