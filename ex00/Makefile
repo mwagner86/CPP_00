@@ -39,4 +39,9 @@ re: fclean all
 val:
 	$(VAL) $(RUN)
 
+test:
+	$(RUN) "shhhhh... I think the students are asleep..."
+	$(RUN) Damnit " ! " "Sorry students, I thought this thing was off."
+	$(RUN)
+
 .PHONY: all clean fclean re
