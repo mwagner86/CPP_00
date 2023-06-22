@@ -17,12 +17,13 @@ GREEN = \033[0;32m
 RED = \033[0;31m
 RESET_COL = \033[0m
 
-NAME = PhoneBook
-CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98
 SRC =	main.cpp		\
 		PhoneBook.cpp	\
 		Contact.cpp		\
+
+NAME = PhoneBook
+CC = c++
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
 

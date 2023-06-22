@@ -10,3 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include <string>
+#include "PhoneBook.hpp"
+
+int	main()
+{
+	PhoneBook	awesome_phonebook;
+	std::string	user_input;
+
+	while (true)
+	{
+		awesome_phonebook.prompt();
+		std::getline(std::cin, user_input);
+
+		if (user_input == "ADD")
+			awesome_phonebook.add();
+		else if (user_input == "SEARCH")
+			awesome_phonebook.search();
+		else if (user_input == "EXIT")
+			break ;
+		else
+			std::cout << "Wrong input\n";
+	}
+	return (0);
+}
