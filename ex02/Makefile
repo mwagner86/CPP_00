@@ -34,9 +34,10 @@ $(NAME): $(SRC)
 	@echo "$(GREEN) $(NAME)!$(RESET_COL)"
 
 clean:
-	rm -f $(NAME) $(LOG)
+	rm -f $(NAME)
 
-fclean: clean
+fclean:
+	rm -f $(NAME) $(LOG)
 
 re: fclean all
 
