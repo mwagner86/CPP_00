@@ -10,17 +10,17 @@
 #                                                                              #
 # **************************************************************************** #
 
-VAL =		valgrind -s --leak-check=full --show-leak-kinds=all
-RUN =		./megaphone
+VAL 		:= valgrind -s --leak-check=full --show-leak-kinds=all
+RUN 		:= ./megaphone
 
-GREEN = \033[0;32m
-RED = \033[0;31m
-RESET_COL = \033[0m
+GREEN 		:= \033[0;32m
+RED 		:= \033[0;31m
+RESET_COL 	:= \033[0m
 
-NAME = megaphone
-CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98
-SRC =	megaphone.cpp
+NAME 		:= megaphone
+CC 			:= c++
+CFLAGS 		:= -Wall -Werror -Wextra -std=c++98
+SRC 		:=	megaphone.cpp
 
 all: $(NAME)
 
