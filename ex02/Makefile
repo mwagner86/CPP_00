@@ -13,7 +13,8 @@
 VAL 		:= valgrind -s --leak-check=full --show-leak-kinds=all
 CAT 		:= | cat > new.log
 RUN 		:= ./Account
-AWK 		:= awk 'FNR==NR{a[$$2];next} !($$2 in a)' 19920104_091532.log new.log
+LOG			:= new.log
+AWK 		:= awk 'FNR==NR{a[$$2];next} !($$2 in a)' 19920104_091532.log $(LOG)
 
 GREEN 		:= \033[0;32m
 RED 		:= \033[0;31m
@@ -33,7 +34,7 @@ $(NAME): $(SRC)
 	@echo "$(GREEN) $(NAME)!$(RESET_COL)"
 
 clean:
-	rm -f $(NAME)
+	rm -f $(NAME) $(LOG)
 
 fclean: clean
 
