@@ -6,7 +6,7 @@
 /*   By: mwagner <mwagner@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 13:58:54 by mwagner           #+#    #+#             */
-/*   Updated: 2023/06/20 13:58:55 by mwagner          ###   ########.fr       */
+/*   Updated: 2023/06/23 14:11:36 by mwagner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ PhoneBook::~PhoneBook() {
 void	PhoneBook::prompt() {
 	std::cout 	<< "********* [ "<< COLOR_RED
 				<< "My Awesome Phone Book" << COLOR_DEFAULT << " ] *********\n"
-				<< "Chose Command:\n"
+				<< "Choose Command:\n\n"
 				<< "[" << COLOR_GREEN << "ADD" << COLOR_DEFAULT << "] | "
 				<< "[" << COLOR_GREEN << "SEARCH" << COLOR_DEFAULT << "] | "
 				<< "[" << COLOR_GREEN << "EXIT" << COLOR_DEFAULT << "]"
