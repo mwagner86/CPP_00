@@ -19,33 +19,24 @@ class Contact {
 
 public:
 
-	Contact(void);
+	Contact();
+	~Contact();
 
-	Contact(std::string FirstName,
-			std::string LastName,
-			std::string NickName,
-			std::string PhoneNumber,
-			std::string DarkestSecret);
-	~Contact(void);
-
-	// Setter and Getter Functions definitions
 	void			setContact(std::string FirstName,
 							   std::string LastName,
 							   std::string NickName,
 							   std::string PhoneNumber,
 							   std::string DarkestSecret);
-	// it's typical to define public "getter and setter" functions to manage
-	// access to private member variables
 	void			setFirstName(std::string name);
-	std::string		getFirstName(void) const;
+	std::string		getFirstName() const;
 	void			setLastName(std::string name);
-	std::string		getLastName(void) const;
+	std::string		getLastName() const;
 	void			setNickName(std::string name);
-	std::string		getNickName(void) const;
+	std::string		getNickName() const;
 	void			setPhoneNumber(std::string p_no);
-	std::string		getPhoneNumber(void) const;
+	std::string		getPhoneNumber() const;
 	void			setDarkestSecret(std::string secret);
-	std::string		getDarkestSecret(void) const;
+	std::string		getDarkestSecret() const;
 
 private:
 

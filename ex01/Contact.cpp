@@ -12,28 +12,14 @@
 
 #include "Contact.hpp"
 
-Contact::Contact(void) {
-
-}
-
-// Constructor with Initialization List
-Contact::Contact(std::string FirstName,
-				 std::string LastName,
-				 std::string NickName,
-				 std::string PhoneNumber,
-				 std::string DarkestSecret) :
-				 _firstName(FirstName),
-				 _lastName(LastName),
-				 _nickName(NickName),
-				 _phoneNumber(PhoneNumber),
-				 _darkestSecret(DarkestSecret) {
+Contact::Contact() {
 	// Constructor body (empty)
-	std::cout << "Contact Constructor called" << std::endl;
+	// std::cout << "Empty Contact Constructor called" << std::endl;
 }
 
-Contact::~Contact(void) {
+Contact::~Contact() {
 	// Destructor body (empty)
-	std::cout << "Contact Destructor called" << std::endl;
+	// std::cout << "Contact Destructor called" << std::endl;
 }
 
 void	Contact::setContact(std::string FirstName,
@@ -47,6 +33,10 @@ void	Contact::setContact(std::string FirstName,
 	this->_phoneNumber = PhoneNumber;
 	this->_darkestSecret = DarkestSecret;
 }
+
+// Setter and Getter Functions definitions
+// it's typical to define public "getter and setter" functions to manage
+// access to private member variables
 
 void	Contact::setFirstName(std::string name) {
 	this->_firstName = name;

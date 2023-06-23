@@ -12,26 +12,19 @@
 
 #include "PhoneBook.hpp"
 
-/*
-the keyword "this" is a pointer that refers to the current object instance
-within a member function of a class.
-It allows you to access the members (variables and functions) of the object
-on which the member function is being called.
-*/
-
-PhoneBook::PhoneBook(void) {
+PhoneBook::PhoneBook() {
 	// Constructor body: initialized int vars of the current PB instance
-	std::cout << "PhoneBook Constructor called" << std::endl;
+	// std::cout << "PhoneBook Constructor called" << std::endl;
 	this->_index = -1;
 	this->_i = 0;
 }
 
 PhoneBook::~PhoneBook() {
 	// Destructor body (empty)
-	std::cout << "PhoneBook Destructor called" << std::endl;
+	// std::cout << "PhoneBook Destructor called" << std::endl;
 }
 
-void	PhoneBook::prompt(void) const {
+void	PhoneBook::prompt() {
 	std::cout 	<< "********* [ "<< COLOR_RED
 				<< "My Awesome Phone Book" << COLOR_DEFAULT << " ] *********\n"
 				<< "Chose Command:\n"
@@ -41,13 +34,13 @@ void	PhoneBook::prompt(void) const {
 				<< std::endl;
 }
 
-std::string	PhoneBook::_trim(std::string input) const {
-	if (input.length() > _WIDTH)
-		return (input.substr(0, this->_WIDTH - 1) + ".");
+std::string	PhoneBook::_trim(std::string input) {
+	if (input.length() > _width)
+		return (input.substr(0, _width - 1) + ".");
 	return (input);
 }
 
-void	PhoneBook::_check_index(void) {
+void	PhoneBook::_check_index() {
 	if (this->_index == 7)
 		this->_index = 0;
 	else
@@ -63,14 +56,14 @@ void	PhoneBook::_input(std::string contact_field, void (Contact::*set)(std::stri
 	{
 		std::cout << "\nEnter " << contact_field << ": ";
 		std::getline(std::cin, input);
-		if (input.size() != 0)
+		if (!input.empty())
 			break ;
 		std::cout << "Input needed\n";
 	}
 	(this->_contact[this->_index].*set)(input);
 }
 
-void	PhoneBook::add(void) {
+void	PhoneBook::add() {
 	this->_check_index();
 	PhoneBook::_input("first name", &Contact::setFirstName);
 	PhoneBook::_input("last name", &Contact::setLastName);
@@ -92,28 +85,28 @@ void	PhoneBook::add_contact(std::string FirstName,
 											DarkestSecret);
 }
 
-void	PhoneBook::search(void) const {
+void	PhoneBook::search() const {
 	std::string input;
 	int 		index;
 
 	std::cout.fill('*');
-	std::cout << std::setw(this->_WIDTH * 4 + 5) << "\n";
+	std::cout << std::setw(_width * 4 + 5) << "\n";
 	std::cout.fill(' ');
-	std::cout << std::setw(this->_WIDTH) << "Index" << "|";
-	std::cout << std::setw(this->_WIDTH) << "First name" << "|";
-	std::cout << std::setw(this->_WIDTH) << "Last name" << "|";
-	std::cout << std::setw(this->_WIDTH) << "Nickname" << std::endl;
+	std::cout << std::setw(_width) << "Index" << "|";
+	std::cout << std::setw(_width) << "First name" << "|";
+	std::cout << std::setw(_width) << "Last name" << "|";
+	std::cout << std::setw(_width) << "Nickname" << std::endl;
 	std::cout.fill('*');
-	std::cout << std::setw(this->_WIDTH * 4 + 5) << "\n";
+	std::cout << std::setw(_width * 4 + 5) << "\n";
 	std::cout.fill(' ');
 	for (int i = 0; i < this->_i; i++) {
-		std::cout.width(this->_WIDTH);
+		std::cout.width(_width);
 		std::cout << i + 1 << "|";
-		std::cout.width(this->_WIDTH);
+		std::cout.width(_width);
 		std::cout << this->_trim(this->_contact[i].getFirstName()) << "|";
-		std::cout.width(this->_WIDTH);
+		std::cout.width(_width);
 		std::cout << this->_trim(this->_contact[i].getLastName()) << "|";
-		std::cout.width(this->_WIDTH);
+		std::cout.width(_width);
 		std::cout << this->_trim(this->_contact[i].getNickName()) << std::endl;
 	}
 	if (this->_i == 0)

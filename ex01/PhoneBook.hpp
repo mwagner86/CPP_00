@@ -15,7 +15,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include <stdlib.h>
+#include <cstdlib>
 #include "Contact.hpp"
 # define COLOR_DEFAULT "\033[0m"
 # define COLOR_RED "\033[31m"
@@ -24,12 +24,12 @@
 class PhoneBook {
 
 public:
-	PhoneBook(void);
-	~PhoneBook(void);
+	PhoneBook();
+	~PhoneBook();
 
-	void	prompt(void) const;
-	void	search(void) const;
-	void	add(void);
+	static void	prompt() ;
+	void	search() const;
+	void	add();
 	void	add_contact(std::string FirstName,
 						std::string LastName,
 						std::string NickName,
@@ -41,11 +41,11 @@ private:
 	Contact				_contact[8];
 	void				_show_contact(int index) const;
 	int 				_index;
-	void				_check_index(void);
+	void				_check_index();
 	int					_i;
 	void				_input(std::string msg, void (Contact::*f)(std::string));
-	std::string 		_trim(std::string input) const;
-	static int const 	_WIDTH = 10;
+	static std::string 	_trim(std::string input) ;
+	static int const 	_width = 10;
 
 };
 
