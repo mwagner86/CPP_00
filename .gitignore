@@ -1,6 +1,6 @@
 # IDE Options
-
-
+.idea
+.vscode
 
 # Prerequisites
 *.d
